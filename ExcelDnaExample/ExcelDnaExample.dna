@@ -1,0 +1,30 @@
+<DnaLibrary Name="ExcelDnaExample Add-In" RuntimeVersion="v4.0">
+  <ExternalLibrary Path="ExcelDnaExample.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="ExcelDnaExample.dll" Pack="true" />
+  <![CDATA[
+  Imports ExcelDna.Integration.CustomUI
+  Imports ExcelDnaExample
+  
+  Public Class ExampleExcelRibbon
+      Inherits ExcelRibbon
+      
+      Public Sub ExampleButtonPressed(control as IRibbonControl)
+          AddIn.ShowExampleForm()
+      End Sub
+
+  End Class
+  ]]>
+  <CustomUI>
+    <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" loadImage="LoadImage">
+      <ribbon>
+        <tabs>
+          <tab id="ExampleTab" label="ExampleDnaExample">
+            <group id="ExampleGroup" label="Example Group">
+              <button id="ExampleButton" label="Example Button" imageMso="HappyFace" size="large" onAction="ExampleButtonPressed" />
+            </group>
+          </tab>
+        </tabs>
+      </ribbon>
+    </customUI>
+  </CustomUI>
+</DnaLibrary>

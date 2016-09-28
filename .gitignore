@@ -1,0 +1,8 @@
+/.vs
+/Build/
+/packages
+*.suo
+*.user
+*.DotSettings
+bin/
+obj/
