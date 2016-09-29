@@ -14,6 +14,6 @@
         </Grid.RowDefinitions>
         <wpf:ChromiumWebBrowser Grid.Row="0"
                           x:Name="Browser"
-                          Address="http://www.google.com" />
+                          Address="about:blank" />
     </Grid>
 </UserControl>

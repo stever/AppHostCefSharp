@@ -2,6 +2,6 @@
 {
     public interface IBrowserService
     {
-        string GetTextToDisplay();
+        string GetUriString();
     }
 }

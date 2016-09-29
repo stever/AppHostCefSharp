@@ -4,14 +4,15 @@ namespace Example.FormsApplication.BrowserClient
 {
     public partial class BrowserControl : UserControl
     {
-        public BrowserControl(string textToDisplay)
+        public BrowserControl() : this("about:blank")
+        { }
+
+        public BrowserControl(string url)
         {
             InitializeComponent();
 
-            //Content = new TextBlock
-            //{
-            //    Text = textToDisplay
-            //};
+            if (url != null)
+                Browser.Address = url;
         }
     }
 }

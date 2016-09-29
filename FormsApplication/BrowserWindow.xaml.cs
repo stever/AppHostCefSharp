@@ -10,7 +10,10 @@ namespace Example.FormsApplication
     /// </summary>
     public partial class BrowserWindow : Window
     {
-        public BrowserWindow()
+        public BrowserWindow() : this("chrome://version")
+        { }
+
+        public BrowserWindow(string url)
         {
             InitializeComponent();
 
@@ -18,7 +21,7 @@ namespace Example.FormsApplication
             {
                 var safeAppHostChildHandle = new ChildProcessFactory().Create("Example.FormsApplication.BrowserClient.dll");
 
-                Content = safeAppHostChildHandle.CreateElement(new BrowserServiceLocator());
+                Content = safeAppHostChildHandle.CreateElement(new BrowserServiceLocator(url));
             }
             catch (Exception e)
             {

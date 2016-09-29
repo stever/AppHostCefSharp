@@ -15,7 +15,7 @@ namespace ExcelDnaExample
 
         public static void ShowExampleForm()
         {
-            Show(new BrowserWindow());
+            Show(new BrowserWindow("https://www.google.com"));
         }
 
         public static void Show(Window window)
@@ -34,7 +34,7 @@ namespace ExcelDnaExample
                     Application.Current.MainWindow = window;
                 }
 
-                window.ShowDialog();
+                window.Show();
             });
         }
     }

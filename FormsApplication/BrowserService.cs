@@ -6,9 +6,16 @@ namespace Example.FormsApplication
 {
     public class BrowserService : MarshalByRefObject, IBrowserService, ISponsor
     {
-        public string GetTextToDisplay()
+        private readonly string url;
+
+        public BrowserService(string url)
         {
-            return "This is a string that the server needs displayed";
+            this.url = url;
+        }
+
+        public string GetUriString()
+        {
+            return url;
         }
 
         public TimeSpan Renewal(ILease lease)
