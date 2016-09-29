@@ -4,7 +4,7 @@ using Example.FormsApplication.Services;
 
 namespace Example.FormsApplication
 {
-    public class ServerImplementedThingThatClientNeeds : MarshalByRefObject, IServerImplementedThingThatClientNeeds, ISponsor
+    public class BrowserService : MarshalByRefObject, IBrowserService, ISponsor
     {
         public string GetTextToDisplay()
         {

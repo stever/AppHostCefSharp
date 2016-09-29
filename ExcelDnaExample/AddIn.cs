@@ -15,7 +15,7 @@ namespace ExcelDnaExample
 
         public static void ShowExampleForm()
         {
-            Show(new MainWindow());
+            Show(new BrowserWindow());
         }
 
         public static void Show(Window window)

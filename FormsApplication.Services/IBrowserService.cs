@@ -1,6 +1,6 @@
 ﻿namespace Example.FormsApplication.Services
 {
-    public interface IServerImplementedThingThatClientNeeds
+    public interface IBrowserService
     {
         string GetTextToDisplay();
     }

@@ -4,9 +4,9 @@ using CefSharp;
 
 namespace Example.FormsApplication.BrowserClient
 {
-    public partial class UserControl1 : UserControl
+    public partial class BrowserControl : UserControl
     {
-        public UserControl1(string textToDisplay)
+        public BrowserControl(string textToDisplay)
         {
             InitializeComponent();
 

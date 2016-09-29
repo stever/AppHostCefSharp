@@ -6,11 +6,11 @@ using RedGate.AppHost.Server;
 namespace Example.FormsApplication
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for BrowserWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BrowserWindow : Window
     {
-        public MainWindow()
+        public BrowserWindow()
         {
             InitializeComponent();
 
@@ -18,7 +18,7 @@ namespace Example.FormsApplication
             {
                 var safeAppHostChildHandle = new ChildProcessFactory().Create("Example.FormsApplication.BrowserClient.dll");
 
-                Content = safeAppHostChildHandle.CreateElement(new ServiceLocator());
+                Content = safeAppHostChildHandle.CreateElement(new BrowserServiceLocator());
             }
             catch (Exception e)
             {

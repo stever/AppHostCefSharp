@@ -8,11 +8,11 @@ namespace Example.FormsApplication.BrowserClient
     {
         public FrameworkElement CreateElement(IAppHostServices service)
         {
-            var serverThing = service.GetService<IServerImplementedThingThatClientNeeds>();
+            var serverThing = service.GetService<IBrowserService>();
 
             string textToDisplay = serverThing.GetTextToDisplay();
 
-            return new UserControl1(textToDisplay);
+            return new BrowserControl(textToDisplay);
         }
     }
 }
