@@ -18,7 +18,7 @@
     <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" loadImage="LoadImage">
       <ribbon>
         <tabs>
-          <tab id="ExampleTab" label="ExampleDnaExample">
+          <tab id="ExampleTab" label="ExcelDnaExample">
             <group id="ExampleGroup" label="Example Group">
               <button id="ExampleButton" label="Example Button" imageMso="HappyFace" size="large" onAction="ExampleButtonPressed" />
             </group>
