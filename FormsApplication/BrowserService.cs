@@ -13,10 +13,7 @@ namespace Example.FormsApplication
             this.url = url;
         }
 
-        public string GetUriString()
-        {
-            return url;
-        }
+        public string URL => url;
 
         public TimeSpan Renewal(ILease lease)
         {

@@ -20,7 +20,7 @@ namespace Example.FormsApplication.BrowserClient
             }
 
             var service = services.GetService<IBrowserService>();
-            return new BrowserControl(service.GetUriString());
+            return new BrowserControl(service.URL);
         }
     }
 }
