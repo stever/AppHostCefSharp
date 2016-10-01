@@ -3,5 +3,6 @@
     public interface IBrowserService
     {
         string URL { get; }
+        bool Closed { get; }
     }
 }

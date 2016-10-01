@@ -19,16 +19,16 @@ namespace Example.FormsApplication
 
             try
             {
-                var safeAppHostChildHandle = new ChildProcessFactory().Create("Example.FormsApplication.BrowserClient.dll");
+                var safeAppHostChildHandle = new ChildProcessFactory()
+                    .Create("Example.FormsApplication.BrowserClient.dll");
 
-                Content = safeAppHostChildHandle.CreateElement(new BrowserServiceLocator(url));
+                var locator = new BrowserServiceLocator(url);
+                Content = safeAppHostChildHandle.CreateElement(locator);
+                Closing += (sender, args) => locator.Close();
             }
             catch (Exception e)
             {
-                Content = new TextBlock
-                {
-                    Text = e.ToString()
-                };
+                Content = new TextBlock {Text = e.ToString()};
             }
         }
     }

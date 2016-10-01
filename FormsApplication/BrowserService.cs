@@ -6,14 +6,18 @@ namespace Example.FormsApplication
 {
     public class BrowserService : MarshalByRefObject, IBrowserService, ISponsor
     {
-        private readonly string url;
+        public string URL { get; }
+        public bool Closed { get; private set; }
 
         public BrowserService(string url)
         {
-            this.url = url;
+            URL = url;
         }
 
-        public string URL => url;
+        public void Close()
+        {
+            Closed = true;
+        }
 
         public TimeSpan Renewal(ILease lease)
         {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using RedGate.AppHost.Interfaces;
 
 namespace Example.FormsApplication
@@ -6,6 +7,7 @@ namespace Example.FormsApplication
     public class BrowserServiceLocator : MarshalByRefObject, IAppHostServices
     {
         private readonly string url;
+        private readonly List<BrowserService> services = new List<BrowserService>();
 
         public BrowserServiceLocator(string url)
         {
@@ -14,7 +16,17 @@ namespace Example.FormsApplication
 
         public T GetService<T>() where T : class
         {
-            return new BrowserService(url) as T;
+            var service = new BrowserService(url);
+            services.Add(service);
+            return service as T;
+        }
+
+        public void Close()
+        {
+            foreach (var service in services)
+            {
+                service.Close();
+            }
         }
     }
 }
