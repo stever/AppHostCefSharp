@@ -1,18 +1,23 @@
 ﻿using System.Windows.Controls;
+using Example.FormsApplication.Services;
 
 namespace Example.FormsApplication.BrowserClient
 {
     public partial class BrowserControl : UserControl
     {
-        public BrowserControl() : this("about:blank")
-        { }
+        private readonly IBrowserService service;
 
-        public BrowserControl(string url)
+        public BrowserControl()
         {
             InitializeComponent();
+        }
 
-            if (url != null)
-                Browser.Address = url;
+        public BrowserControl(IBrowserService service) : this()
+        {
+            this.service = service;
+
+            var url = service.URL;
+            if (url != null) Browser.Address = url;
         }
     }
 }

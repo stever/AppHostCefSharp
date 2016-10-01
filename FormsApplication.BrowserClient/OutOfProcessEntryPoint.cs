@@ -19,8 +19,7 @@ namespace Example.FormsApplication.BrowserClient
                 Cef.Initialize(settings, shutdownOnProcessExit: true, performDependencyCheck: true);
             }
 
-            var service = services.GetService<IBrowserService>();
-            return new BrowserControl(service.URL);
+            return new BrowserControl(services.GetService<IBrowserService>());
         }
     }
 }
