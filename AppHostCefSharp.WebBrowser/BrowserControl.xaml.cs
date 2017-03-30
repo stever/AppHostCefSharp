@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows;
 using System.Windows.Threading;
 using CefSharp;
 using SteveRGB.AppHostCefSharp.Services;
@@ -98,6 +99,43 @@ namespace SteveRGB.AppHostCefSharp.WebBrowser
         public bool RunContextMenu(IWebBrowser browserControl, IBrowser browser, IFrame frame, IContextMenuParams parameters, IMenuModel model, IRunContextMenuCallback callback)
         {
             return false;
+        }
+
+        #endregion
+
+        #region Debug menu
+
+        private void MenuItem_Click_ShowDevTools(object sender, RoutedEventArgs e)
+        {
+            Browser.ShowDevTools();
+        }
+
+        private void MenuItem_Click_CloseDevTools(object sender, RoutedEventArgs e)
+        {
+            Browser.CloseDevTools();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+#if !DEBUG
+            var menubar = (Menu)FindName("MenuBar");
+            if (menubar != null) menubar.Visibility = Visibility.Collapsed;
+#endif
+        }
+
+        private void MenuItem_Click_PageReload(object sender, RoutedEventArgs e)
+        {
+            Browser.Reload();
+        }
+
+        private void MenuItem_Click_NavigateBack(object sender, RoutedEventArgs e)
+        {
+            Browser.Back();
+        }
+
+        private void MenuItem_Click_NavigateForward(object sender, RoutedEventArgs e)
+        {
+            Browser.Forward();
         }
 
         #endregion

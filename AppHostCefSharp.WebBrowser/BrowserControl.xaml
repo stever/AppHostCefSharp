@@ -6,14 +6,26 @@
              xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
-             Background="White">
+             Background="White"
+             Loaded="UserControl_Loaded">
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition />
             <RowDefinition Height="Auto" />
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <wpf:ChromiumWebBrowser Grid.Row="0"
-                          x:Name="Browser"
-                          Address="about:blank" />
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top" x:Name="MenuBar" Visibility="Visible">
+                <MenuItem Header="_Page">
+                    <MenuItem Header="_Reload" Click="MenuItem_Click_PageReload"/>
+                    <MenuItem Header="Navigate _Back" Click="MenuItem_Click_NavigateBack"/>
+                    <MenuItem Header="Navigate _Forward" Click="MenuItem_Click_NavigateForward"/>
+                </MenuItem>
+                <MenuItem Header="_Dev Tools">
+                    <MenuItem Header="_Show" Click="MenuItem_Click_ShowDevTools"/>
+                    <MenuItem Header="_Close" Click="MenuItem_Click_CloseDevTools"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <wpf:ChromiumWebBrowser Grid.Row="1" x:Name="Browser" Address="about:blank" />
     </Grid>
 </UserControl>
