@@ -1,6 +1,7 @@
 @ECHO OFF
 
 IF EXIST .vs RMDIR /S /Q .vs
+IF EXIST Build RMDIR /S /Q Build
 IF EXIST packages RMDIR /S /Q packages
 
 SET PROJ=AppHostCefSharp
