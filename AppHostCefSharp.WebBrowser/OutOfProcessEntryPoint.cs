@@ -1,8 +1,8 @@
 ﻿using System.Windows;
-using Example.FormsApplication.Services;
 using RedGate.AppHost.Interfaces;
+using SteveRGB.AppHostCefSharp.Services;
 
-namespace Example.FormsApplication.BrowserClient
+namespace SteveRGB.AppHostCefSharp.WebBrowser
 {
     public class OutOfProcessEntryPoint : IOutOfProcessEntryPoint
     {

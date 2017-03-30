@@ -3,7 +3,7 @@
   <Reference Path="ExcelDnaExample.dll" Pack="true" />
   <![CDATA[
   Imports ExcelDna.Integration.CustomUI
-  Imports ExcelDnaExample
+  Imports SteveRGB.ExcelDnaExample
   
   Public Class ExampleExcelRibbon
       Inherits ExcelRibbon

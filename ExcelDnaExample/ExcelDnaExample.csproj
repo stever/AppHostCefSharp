@@ -50,13 +50,14 @@
   <ItemGroup>
     <Content Include="ExcelDnaExample.dna">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="PostBuild.bat" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FormsApplication\AppHostCefSharp.csproj">
+    <ProjectReference Include="..\AppHostCefSharp\AppHostCefSharp.csproj">
       <Project>{29fc6dc1-b9e2-471f-8aa3-9f93363f55dd}</Project>
       <Name>AppHostCefSharp</Name>
     </ProjectReference>

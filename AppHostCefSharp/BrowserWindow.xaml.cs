@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using RedGate.AppHost.Server;
 
-namespace Example.FormsApplication
+namespace SteveRGB.AppHostCefSharp
 {
     /// <summary>
     /// Interaction logic for BrowserWindow.xaml
@@ -20,7 +20,7 @@ namespace Example.FormsApplication
             try
             {
                 var safeAppHostChildHandle = new ChildProcessFactory()
-                    .Create("Example.FormsApplication.BrowserClient.dll");
+                    .Create("AppHostCefSharp.WebBrowser.dll");
 
                 var locator = new BrowserServiceLocator(url);
                 Content = safeAppHostChildHandle.CreateElement(locator);

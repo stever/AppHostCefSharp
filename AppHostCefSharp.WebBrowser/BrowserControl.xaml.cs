@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using CefSharp;
-using Example.FormsApplication.Services;
+using SteveRGB.AppHostCefSharp.Services;
 
-namespace Example.FormsApplication.BrowserClient
+namespace SteveRGB.AppHostCefSharp.WebBrowser
 {
     public partial class BrowserControl : UserControl
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.Remoting.Lifetime;
-using Example.FormsApplication.Services;
+using SteveRGB.AppHostCefSharp.Services;
 
-namespace Example.FormsApplication
+namespace SteveRGB.AppHostCefSharp
 {
     public class BrowserService : MarshalByRefObject, IBrowserService, ISponsor
     {

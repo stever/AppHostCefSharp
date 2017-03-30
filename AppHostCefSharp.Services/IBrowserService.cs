@@ -1,4 +1,4 @@
-﻿namespace Example.FormsApplication.Services
+﻿namespace SteveRGB.AppHostCefSharp.Services
 {
     public interface IBrowserService
     {

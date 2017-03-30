@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using RedGate.AppHost.Interfaces;
 
-namespace Example.FormsApplication
+namespace SteveRGB.AppHostCefSharp
 {
     public class BrowserServiceLocator : MarshalByRefObject, IAppHostServices
     {

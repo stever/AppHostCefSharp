@@ -1,7 +1,6 @@
-﻿<Application x:Class="Example.FormsApplication.App"
+﻿<Application x:Class="SteveRGB.AppHostCefSharp.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Example.FormsApplication"
              StartupUri="BrowserWindow.xaml">
     <Application.Resources>
          

@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Forms.Integration;
-using Example.FormsApplication;
 using ExcelDna.Integration;
+using SteveRGB.AppHostCefSharp;
 
-namespace ExcelDnaExample
+namespace SteveRGB.ExcelDnaExample
 {
     public class AddIn : IExcelAddIn
     {

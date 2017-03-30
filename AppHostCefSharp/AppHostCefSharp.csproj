@@ -119,7 +119,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FormsApplication.Services\AppHostCefSharp.Services.csproj">
+    <ProjectReference Include="..\AppHostCefSharp.Services\AppHostCefSharp.Services.csproj">
       <Project>{df29513b-2c81-48d9-97cd-45cc17afb5d2}</Project>
       <Name>AppHostCefSharp.Services</Name>
     </ProjectReference>
