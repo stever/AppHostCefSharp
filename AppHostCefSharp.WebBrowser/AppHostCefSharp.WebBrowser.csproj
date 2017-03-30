@@ -42,24 +42,16 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="RedGate.AppHost.Client, Version=0.0.1.123, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=x86">
-      <HintPath>..\packages\RedGate.AppHost.0.0.1.123\lib\RedGate.AppHost.Client.exe</HintPath>
+    <Reference Include="RedGate.AppHost.Interfaces, Version=0.0.1.135, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
+      <HintPath>..\packages\RedGate.AppHost.0.0.1.135\lib\RedGate.AppHost.Interfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="RedGate.AppHost.Client.x64, Version=0.0.1.123, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=AMD64">
-      <HintPath>..\packages\RedGate.AppHost.0.0.1.123\lib\RedGate.AppHost.Client.x64.exe</HintPath>
+    <Reference Include="RedGate.AppHost.Remoting.WPF, Version=0.0.1.135, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
+      <HintPath>..\packages\RedGate.AppHost.0.0.1.135\lib\RedGate.AppHost.Remoting.WPF.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="RedGate.AppHost.Interfaces, Version=0.0.1.123, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
-      <HintPath>..\packages\RedGate.AppHost.0.0.1.123\lib\RedGate.AppHost.Interfaces.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RedGate.AppHost.Remoting.WPF, Version=0.0.1.123, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
-      <HintPath>..\packages\RedGate.AppHost.0.0.1.123\lib\RedGate.AppHost.Remoting.WPF.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RedGate.AppHost.Server, Version=0.0.1.123, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
-      <HintPath>..\packages\RedGate.AppHost.0.0.1.123\lib\RedGate.AppHost.Server.dll</HintPath>
+    <Reference Include="RedGate.AppHost.Server, Version=0.0.1.135, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
+      <HintPath>..\packages\RedGate.AppHost.0.0.1.135\lib\RedGate.AppHost.Server.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -100,10 +92,12 @@
     <Error Condition="!Exists('..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.targets'))" />
     <Error Condition="!Exists('..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.props'))" />
     <Error Condition="!Exists('..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.targets'))" />
+    <Error Condition="!Exists('..\packages\RedGate.AppHost.0.0.1.135\build\RedGate.AppHost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\RedGate.AppHost.0.0.1.135\build\RedGate.AppHost.targets'))" />
   </Target>
   <Import Project="..\packages\cef.redist.x86.3.2883.1552\build\cef.redist.x86.targets" Condition="Exists('..\packages\cef.redist.x86.3.2883.1552\build\cef.redist.x86.targets')" />
   <Import Project="..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.targets')" />
   <Import Project="..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.targets" Condition="Exists('..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.targets')" />
+  <Import Project="..\packages\RedGate.AppHost.0.0.1.135\build\RedGate.AppHost.targets" Condition="Exists('..\packages\RedGate.AppHost.0.0.1.135\build\RedGate.AppHost.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

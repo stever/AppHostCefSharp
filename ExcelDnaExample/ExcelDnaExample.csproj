@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +40,18 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="RedGate.AppHost.Interfaces, Version=0.0.1.135, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
+      <HintPath>..\packages\RedGate.AppHost.0.0.1.135\lib\RedGate.AppHost.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RedGate.AppHost.Remoting.WPF, Version=0.0.1.135, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
+      <HintPath>..\packages\RedGate.AppHost.0.0.1.135\lib\RedGate.AppHost.Remoting.WPF.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RedGate.AppHost.Server, Version=0.0.1.135, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
+      <HintPath>..\packages\RedGate.AppHost.0.0.1.135\lib\RedGate.AppHost.Server.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
@@ -67,6 +81,13 @@
   <PropertyGroup>
     <PostBuildEvent>..\..\ExcelDnaExample\PostBuild.bat</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="..\packages\RedGate.AppHost.0.0.1.135\Build\RedGate.AppHost.targets" Condition="Exists('..\packages\RedGate.AppHost.0.0.1.135\Build\RedGate.AppHost.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\RedGate.AppHost.0.0.1.135\Build\RedGate.AppHost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\RedGate.AppHost.0.0.1.135\Build\RedGate.AppHost.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
