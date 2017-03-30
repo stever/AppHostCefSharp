@@ -55,6 +55,8 @@ namespace SteveRGB.AppHostCefSharp.WebBrowser
             {
                 Cef.Shutdown();
             }
+
+            Environment.Exit(0);
         }
 
         private void CefInit()
