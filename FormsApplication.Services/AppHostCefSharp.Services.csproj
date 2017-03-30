@@ -7,8 +7,8 @@
     <ProjectGuid>{DF29513B-2C81-48D9-97CD-45CC17AFB5D2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Example.FormsApplication.Services</RootNamespace>
-    <AssemblyName>Example.FormsApplication.Services</AssemblyName>
+    <RootNamespace>SteveRGB.AppHostCefSharp.Services</RootNamespace>
+    <AssemblyName>AppHostCefSharp.Services</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FormsApplication")]
+[assembly: AssemblyTitle("SteveRGB.AppHostCefSharp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FormsApplication")]
+[assembly: AssemblyProduct("AppHostCefSharp")]
 [assembly: AssemblyCopyright("Copyright © Steven Robertson 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

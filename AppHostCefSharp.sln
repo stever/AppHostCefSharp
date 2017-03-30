@@ -5,14 +5,14 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelDnaExample", "ExcelDnaExample\ExcelDnaExample.csproj", "{ECB915E3-D3FB-48E8-B906-6E06B0994FC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsApplication", "FormsApplication\FormsApplication.csproj", "{29FC6DC1-B9E2-471F-8AA3-9F93363F55DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHostCefSharp", "FormsApplication\AppHostCefSharp.csproj", "{29FC6DC1-B9E2-471F-8AA3-9F93363F55DD}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7547CFB2-5923-40D1-9645-903644D34E92} = {7547CFB2-5923-40D1-9645-903644D34E92}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsApplication.Services", "FormsApplication.Services\FormsApplication.Services.csproj", "{DF29513B-2C81-48D9-97CD-45CC17AFB5D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHostCefSharp.Services", "FormsApplication.Services\AppHostCefSharp.Services.csproj", "{DF29513B-2C81-48D9-97CD-45CC17AFB5D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsApplication.BrowserClient", "FormsApplication.BrowserClient\FormsApplication.BrowserClient.csproj", "{7547CFB2-5923-40D1-9645-903644D34E92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHostCefSharp.WebBrowser", "FormsApplication.BrowserClient\AppHostCefSharp.WebBrowser.csproj", "{7547CFB2-5923-40D1-9645-903644D34E92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

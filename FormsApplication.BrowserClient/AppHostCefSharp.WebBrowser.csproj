@@ -9,8 +9,8 @@
     <ProjectGuid>{7547CFB2-5923-40D1-9645-903644D34E92}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Example.FormsApplication.BrowserClient</RootNamespace>
-    <AssemblyName>Example.FormsApplication.BrowserClient</AssemblyName>
+    <RootNamespace>SteveRGB.AppHostCefSharp.BrowserClient</RootNamespace>
+    <AssemblyName>AppHostCefSharp.BrowserClient</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -73,9 +73,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FormsApplication.Services\FormsApplication.Services.csproj">
+    <ProjectReference Include="..\FormsApplication.Services\AppHostCefSharp.Services.csproj">
       <Project>{df29513b-2c81-48d9-97cd-45cc17afb5d2}</Project>
-      <Name>FormsApplication.Services</Name>
+      <Name>AppHostCefSharp.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

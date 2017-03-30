@@ -7,7 +7,7 @@
     <ProjectGuid>{ECB915E3-D3FB-48E8-B906-6E06B0994FC4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExcelDnaExample</RootNamespace>
+    <RootNamespace>SteveRGB.ExcelDnaExample</RootNamespace>
     <AssemblyName>ExcelDnaExample</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -56,9 +56,9 @@
     <None Include="PostBuild.bat" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FormsApplication\FormsApplication.csproj">
+    <ProjectReference Include="..\FormsApplication\AppHostCefSharp.csproj">
       <Project>{29fc6dc1-b9e2-471f-8aa3-9f93363f55dd}</Project>
-      <Name>FormsApplication</Name>
+      <Name>AppHostCefSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
