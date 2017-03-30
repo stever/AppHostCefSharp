@@ -18,6 +18,7 @@ namespace SteveRGB.ExcelDnaExample
 
         public Settings()
         {
+            base["API_Port"] = "8088";
             base["Geometry_ExampleWindow"] = "";
 
             var filename = Path.Combine(AppDataPath, SettingsFilename);
