@@ -7,16 +7,18 @@ namespace SteveRGB.AppHostCefSharp
     public class BrowserServiceLocator : MarshalByRefObject, IAppHostServices
     {
         private readonly string url;
+        private readonly string appDataPath;
         private readonly List<BrowserService> services = new List<BrowserService>();
 
-        public BrowserServiceLocator(string url)
+        public BrowserServiceLocator(string url, string appDataPath)
         {
             this.url = url;
+            this.appDataPath = appDataPath;
         }
 
         public T GetService<T>() where T : class
         {
-            var service = new BrowserService(url);
+            var service = new BrowserService(url, appDataPath);
             services.Add(service);
             return service as T;
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.Remoting.Lifetime;
 using SteveRGB.AppHostCefSharp.Services;
 
@@ -7,11 +8,15 @@ namespace SteveRGB.AppHostCefSharp
     public class BrowserService : MarshalByRefObject, IBrowserService, ISponsor
     {
         public string URL { get; }
+
+        public string AppDataPath { get; }
+
         public bool Closed { get; private set; }
 
-        public BrowserService(string url)
+        public BrowserService(string url, string appDataPath)
         {
             URL = url;
+            AppDataPath = appDataPath;
         }
 
         public void Close()
@@ -26,7 +31,8 @@ namespace SteveRGB.AppHostCefSharp
 
         public override object InitializeLifetimeService()
         {
-            ILease ret = (ILease)base.InitializeLifetimeService();
+            var ret = (ILease)base.InitializeLifetimeService();
+            Debug.Assert(ret != null);
             ret.SponsorshipTimeout = TimeSpan.FromMinutes(2);
             ret.Register(this);
             return ret;

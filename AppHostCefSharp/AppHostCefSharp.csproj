@@ -86,6 +86,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Geometry.cs" />
+    <Compile Include="IPersistGeometry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

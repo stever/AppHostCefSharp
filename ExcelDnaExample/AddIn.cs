@@ -15,10 +15,17 @@ namespace SteveRGB.ExcelDnaExample
 
         public static void ShowExampleForm()
         {
-            Show(new BrowserWindow("https://www.google.com"));
+            var geometry = new GeometryPersistence("ExampleWindow", 800, 600);
+            var start = "https://www.google.com";
+            var window = new BrowserWindow(start, geometry, Settings.AppDataFolder)
+            {
+                Title = "AppHostCefSharp"
+            };
+
+            Show(window);
         }
 
-        public static void Show(Window window)
+        private static void Show(Window window)
         {
             ExcelAsyncUtil.QueueAsMacro(() =>
             {
