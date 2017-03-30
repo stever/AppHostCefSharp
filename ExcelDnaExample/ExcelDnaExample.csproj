@@ -76,6 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddIn.cs" />
+    <Compile Include="CustomBootstrapper.cs" />
+    <Compile Include="CustomRootPathProvider.cs" />
     <Compile Include="GeometryPersistence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleModule.cs" />

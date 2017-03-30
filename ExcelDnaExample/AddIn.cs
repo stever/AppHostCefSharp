@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Forms.Integration;
 using ExcelDna.Integration;
@@ -67,6 +68,16 @@ namespace SteveRGB.ExcelDnaExample
 
         internal static ExcelInterop.Application Excel
             => new ExcelInterop.Application(null, ExcelDnaUtil.Application);
+
+        internal static string AssemblyDirectory
+        {
+            get
+            {
+                // Nancy assembly is known to be in the program files folder along with the XLL.
+                var fullPath = Assembly.GetAssembly(typeof(NancyContext)).Location;
+                return Path.GetDirectoryName(fullPath);
+            }
+        }
 
         void IExcelAddIn.AutoOpen()
         {
