@@ -84,7 +84,7 @@
     <Compile Include="CustomRootPathProvider.cs" />
     <Compile Include="GeometryPersistence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleModule.cs" />
+    <Compile Include="HttpModules\SampleModule.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
