@@ -82,7 +82,9 @@
     <Compile Include="AddIn.cs" />
     <Compile Include="CustomBootstrapper.cs" />
     <Compile Include="CustomRootPathProvider.cs" />
+    <Compile Include="ExcelHttpModule.cs" />
     <Compile Include="GeometryPersistence.cs" />
+    <Compile Include="HttpModules\ExcelModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HttpModules\SampleModule.cs" />
     <Compile Include="Settings.cs" />

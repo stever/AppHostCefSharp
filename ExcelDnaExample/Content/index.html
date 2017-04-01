@@ -7,11 +7,37 @@
     <title>Example</title>
     <style>
         body {
-            font-family: Verdana;
+            font-family: Verdana, sans-serif;
         }
     </style>
 </head>
 <body>
-    Hello, world!
+Click on the sheet name to select the sheet.
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script>
+    $(() => {
+        $.get('/api/methods/listSheets.json').done((data) => {
+            const body = $('body');
+            const ul = $('<ul/>').appendTo(body);
+            for (let i = 0; i < data.length; i++) {
+                const name = data[i];
+                const a = $('<a/>')
+                    .attr('href', '#')
+                    .append(name)
+                    .click(() => $.ajax({
+                        type: 'POST',
+                        url: '/api/methods/selectSheet.json',
+                        dataType: 'json',
+                        data: JSON.stringify({ Sheet: name })
+                    }));
+                $('<li/>').append(a).appendTo(ul);
+            }
+        }).fail(() => {
+            document.write('API request failed');
+        });
+    });
+</script>
 </body>
 </html>
