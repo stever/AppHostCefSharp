@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Forms.Integration;
 using ExcelDna.Integration;
+using log4net;
 using Nancy;
 using Nancy.Hosting.Self;
 using SteveRGB.AppHostCefSharp;
@@ -13,6 +14,9 @@ namespace SteveRGB.ExcelDnaExample
 {
     public class AddIn : IExcelAddIn
     {
+        private static readonly ILog Log = LogManager.
+            GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         private static NancyHost host;
 
         public AddIn()
@@ -81,9 +85,16 @@ namespace SteveRGB.ExcelDnaExample
 
         void IExcelAddIn.AutoOpen()
         {
-            if (host == null)
+            try
             {
-                StartHost();
+                if (host == null)
+                {
+                    StartHost();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("EXCEPTION", ex);
             }
         }
 
