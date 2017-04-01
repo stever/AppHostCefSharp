@@ -1,6 +1,6 @@
 <DnaLibrary Name="ExcelDnaExample Add-In" RuntimeVersion="v4.0">
-  <ExternalLibrary Path="ExcelDnaExample.dll" LoadFromBytes="true" Pack="true" />
-  <Reference Path="ExcelDnaExample.dll" Pack="true" />
+  <ExternalLibrary Path="ExcelDnaExample.dll" Pack="true" />
+  <Reference Path="ExcelDnaExample.dll" ExplicitExports="true" Pack="true" />
   <![CDATA[
   Imports ExcelDna.Integration.CustomUI
   Imports SteveRGB.ExcelDnaExample
