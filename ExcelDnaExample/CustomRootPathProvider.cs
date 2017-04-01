@@ -3,7 +3,7 @@ using System.Reflection;
 using log4net;
 using Nancy;
 
-namespace SteveRGB.ExcelDnaExample
+namespace ExcelDnaExample
 {
     /// <summary>
     /// This class is provided to set root path depending on the build

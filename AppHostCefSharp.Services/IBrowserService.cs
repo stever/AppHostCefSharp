@@ -1,4 +1,4 @@
-﻿namespace SteveRGB.AppHostCefSharp.Services
+﻿namespace AppHostCefSharp.Services
 {
     public interface IBrowserService
     {

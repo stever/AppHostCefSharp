@@ -2,7 +2,7 @@
 using ExcelDna.Integration;
 using Nancy;
 
-namespace SteveRGB.ExcelDnaExample
+namespace ExcelDnaExample
 {
     /// <summary>
     /// Base class for NancyModules with Excel support methods.

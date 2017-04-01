@@ -2,7 +2,7 @@
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 
-namespace SteveRGB.ExcelDnaExample
+namespace ExcelDnaExample
 {
     public class CustomBootstrapper : DefaultNancyBootstrapper
     {

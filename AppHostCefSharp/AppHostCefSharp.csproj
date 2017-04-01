@@ -7,7 +7,7 @@
     <ProjectGuid>{29FC6DC1-B9E2-471F-8AA3-9F93363F55DD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SteveRGB.AppHostCefSharp</RootNamespace>
+    <RootNamespace>AppHostCefSharp</RootNamespace>
     <AssemblyName>AppHostCefSharp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

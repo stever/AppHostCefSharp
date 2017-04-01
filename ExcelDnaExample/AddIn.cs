@@ -7,10 +7,10 @@ using ExcelDna.Integration;
 using log4net;
 using Nancy;
 using Nancy.Hosting.Self;
-using SteveRGB.AppHostCefSharp;
+using AppHostCefSharp;
 using ExcelInterop = NetOffice.ExcelApi;
 
-namespace SteveRGB.ExcelDnaExample
+namespace ExcelDnaExample
 {
     public class AddIn : IExcelAddIn
     {

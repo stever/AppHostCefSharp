@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace SteveRGB.ExcelDnaExample
+namespace ExcelDnaExample
 {
     public class Settings : Dictionary<string, string>
     {

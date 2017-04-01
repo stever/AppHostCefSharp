@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace SteveRGB.AppHostCefSharp
+namespace AppHostCefSharp
 {
     /// <summary>
     /// Interaction logic for App.xaml

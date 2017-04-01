@@ -3,9 +3,9 @@ using System.IO;
 using System.Windows;
 using System.Windows.Threading;
 using CefSharp;
-using SteveRGB.AppHostCefSharp.Services;
+using AppHostCefSharp.Services;
 
-namespace SteveRGB.AppHostCefSharp.WebBrowser
+namespace AppHostCefSharp.WebBrowser
 {
     public partial class BrowserControl : IContextMenuHandler
     {

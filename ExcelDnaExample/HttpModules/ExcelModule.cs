@@ -8,7 +8,7 @@ using Nancy.Extensions;
 using Newtonsoft.Json;
 using ExcelInterop = NetOffice.ExcelApi;
 
-namespace SteveRGB.ExcelDnaExample.HttpModules
+namespace ExcelDnaExample.HttpModules
 {
     public class Excel : ExcelHttpModule
     {

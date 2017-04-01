@@ -1,4 +1,4 @@
-﻿namespace SteveRGB.ExcelDnaExample.HttpModules
+﻿namespace ExcelDnaExample.HttpModules
 {
     public class SampleModule : Nancy.NancyModule
     {

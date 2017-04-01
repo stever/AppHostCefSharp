@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.Remoting.Lifetime;
-using SteveRGB.AppHostCefSharp.Services;
+using AppHostCefSharp.Services;
 
-namespace SteveRGB.AppHostCefSharp
+namespace AppHostCefSharp
 {
     public class BrowserService : MarshalByRefObject, IBrowserService, ISponsor
     {

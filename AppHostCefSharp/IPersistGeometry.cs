@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace SteveRGB.AppHostCefSharp
+namespace AppHostCefSharp
 {
     public interface IPersistGeometry
     {

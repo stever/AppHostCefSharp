@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows;
-using SteveRGB.AppHostCefSharp;
+using AppHostCefSharp;
 
-namespace SteveRGB.ExcelDnaExample
+namespace ExcelDnaExample
 {
     public class GeometryPersistence : IPersistGeometry
     {

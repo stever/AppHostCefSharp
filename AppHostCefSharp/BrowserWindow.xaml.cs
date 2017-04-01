@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using RedGate.AppHost.Server;
 
-namespace SteveRGB.AppHostCefSharp
+namespace AppHostCefSharp
 {
     public partial class BrowserWindow
     {
