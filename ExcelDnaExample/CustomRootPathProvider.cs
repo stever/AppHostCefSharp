@@ -1,4 +1,6 @@
 ﻿using System.IO;
+using System.Reflection;
+using log4net;
 using Nancy;
 
 namespace SteveRGB.ExcelDnaExample
@@ -12,13 +14,18 @@ namespace SteveRGB.ExcelDnaExample
     /// </summary>
     public class CustomRootPathProvider : IRootPathProvider
     {
+        private static readonly ILog Log = LogManager.
+            GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         public string GetRootPath()
         {
 #if !DEBUG
-            return AddIn.AssemblyDirectory;
+            var result = AddIn.AssemblyDirectory;
 #else
-            return Path.GetFullPath(Path.Combine(AddIn.AssemblyDirectory, @"..\.."));
+            var result = Path.GetFullPath(Path.Combine(AddIn.AssemblyDirectory, @"..\..\ExcelDnaExample"));
 #endif
+            Log.DebugFormat("Root: {0}", result);
+            return result;
         }
     }
 }

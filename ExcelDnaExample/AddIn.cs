@@ -109,7 +109,7 @@ namespace SteveRGB.ExcelDnaExample
         public static void ShowExampleForm()
         {
             var geometry = new GeometryPersistence("ExampleWindow", 800, 600);
-            var start = $"{WebHost}/";
+            var start = $"{WebHost}/Content/index.html";
             var window = new BrowserWindow(start, geometry, Settings.AppDataFolder)
             {
                 Title = "AppHostCefSharp"
