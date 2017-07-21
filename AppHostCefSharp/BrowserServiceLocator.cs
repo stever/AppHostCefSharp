@@ -23,11 +23,11 @@ namespace AppHostCefSharp
             return service as T;
         }
 
-        public void Close()
+        public void Send(string msg)
         {
             foreach (var service in services)
             {
-                service.Close();
+                service.MessageQueue.Enqueue(msg);
             }
         }
     }

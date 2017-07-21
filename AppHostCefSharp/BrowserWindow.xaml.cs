@@ -6,23 +6,10 @@ namespace AppHostCefSharp
 {
     public partial class BrowserWindow
     {
-        private readonly string url;
-        private readonly string appDataPath;
-        private readonly IPersistGeometry geometry;
-
-        private IChildProcessHandle safeAppHostChildHandle;
-        private BrowserServiceLocator locator;
+        private readonly BrowserServiceLocator locator;
 
         public BrowserWindow()
             : this("chrome://version", null, null)
-        { }
-
-        public BrowserWindow(string url)
-            : this(url, null, null)
-        { }
-
-        public BrowserWindow(string url, string appDataPath)
-            : this(url, null, appDataPath)
         { }
 
         public BrowserWindow(string url, IPersistGeometry geometry)
@@ -32,16 +19,11 @@ namespace AppHostCefSharp
         public BrowserWindow(string url, IPersistGeometry geometry, string appDataPath)
         {
             InitializeComponent();
-
-            this.url = url;
-            this.appDataPath = appDataPath;
-            this.geometry = geometry;
-
             try
             {
                 geometry?.Restore(this);
 
-                safeAppHostChildHandle = new ChildProcessFactory()
+                var safeAppHostChildHandle = new ChildProcessFactory()
                     .Create("AppHostCefSharp.WebBrowser.dll");
 
                 locator = new BrowserServiceLocator(url, appDataPath);
@@ -49,7 +31,7 @@ namespace AppHostCefSharp
 
                 Closing += (sender, args) =>
                 {
-                    locator.Close();
+                    locator.Send("Close");
                     geometry?.Persist(this);
                 };
             }
@@ -59,14 +41,9 @@ namespace AppHostCefSharp
             }
         }
 
-        public void Refresh()
+        public void Send(string msg)
         {
-            locator.Close();
-            geometry?.Persist(this);
-            safeAppHostChildHandle = new ChildProcessFactory()
-                .Create("AppHostCefSharp.WebBrowser.dll");
-            locator = new BrowserServiceLocator(url, appDataPath);
-            Content = safeAppHostChildHandle.CreateElement(locator);
+            locator.Send(msg);
         }
     }
 }

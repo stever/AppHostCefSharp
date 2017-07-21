@@ -4,6 +4,7 @@
     {
         string URL { get; }
         string AppDataPath { get; }
-        bool Closed { get; }
+        int MessageCount { get; }
+        string GetMessage();
     }
 }
