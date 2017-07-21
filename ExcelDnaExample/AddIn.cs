@@ -116,6 +116,7 @@ namespace ExcelDnaExample
             };
 
             Show(window);
+            window.Send("Ping");
         }
 
         private static void Show(Window window)

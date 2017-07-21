@@ -69,6 +69,11 @@ namespace AppHostCefSharp.WebBrowser
 					Environment.Exit(0);
                     return;
                 }
+
+                if (msg == "Ping")
+                {
+                    service.SendInReturn("Pong");
+                }
             }
         }
 
