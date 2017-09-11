@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.Remoting.Lifetime;
 using AppHostCefSharp.Services;
@@ -10,10 +9,7 @@ namespace AppHostCefSharp
     {
         public string URL { get; }
         public string AppDataPath { get; }
-        public int MessageCount => MessageQueue.Count;
-        public int ReturnMessageCount => ReturnMessageQueue.Count;
-        public Queue<string> MessageQueue { get; } = new Queue<string>();
-        public Queue<string> ReturnMessageQueue { get; } = new Queue<string>();
+        public bool Closed { get; private set; }
 
         public BrowserService(string url, string appDataPath)
         {
@@ -21,18 +17,14 @@ namespace AppHostCefSharp
             AppDataPath = appDataPath;
         }
 
-        public string GetMessage()
+        public void Close()
         {
-            return MessageQueue.Count > 0 
-                ? MessageQueue.Dequeue() 
-                : null;
+            Closed = true;
         }
 
-        public string GetReturnMessage()
+        public TimeSpan Renewal(ILease lease)
         {
-            return ReturnMessageQueue.Count > 0 
-                ? ReturnMessageQueue.Dequeue() 
-                : null;
+            return TimeSpan.FromMinutes(1);
         }
 
         public override object InitializeLifetimeService()
@@ -42,16 +34,6 @@ namespace AppHostCefSharp
             ret.SponsorshipTimeout = TimeSpan.FromMinutes(2);
             ret.Register(this);
             return ret;
-        }
-
-        public TimeSpan Renewal(ILease lease)
-        {
-            return TimeSpan.FromMinutes(1);
-        }
-
-        public void SendInReturn(string msg)
-        {
-            ReturnMessageQueue.Enqueue(msg);
         }
     }
 }

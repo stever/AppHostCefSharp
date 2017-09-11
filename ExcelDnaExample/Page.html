@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Example</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1>Test page</h1>
+<div id="output"></div>
+<script>
+    (() => {
+        var output = document.getElementById("output");
+
+        bound.getSheetNames().then((json) => {
+            let html = '<p>List of worksheets in the active workbook:</p>';
+            html += '<ol>';
+            const list = JSON.parse(json);
+            for (let i = 0; i < list.length; i++) {
+                html += `<li><a href="javascript:bound.selectSheet('${list[i]}')">${list[i]}</a></li>`;
+            }
+            html += '</ol>';
+            output.innerHTML += html;
+        });
+
+    })();
+</script>
+</body>
+</html>

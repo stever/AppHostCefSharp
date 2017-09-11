@@ -8,7 +8,7 @@ to deal with the problem, and so this example project was made. It works!
 
 ## Build
 
-This solution was built using Visual Studio Community 2015.
+This solution was built using Visual Studio Community 2017.
 
 Usual procedure to launch an Excel add-in:
 
@@ -22,6 +22,7 @@ Now when you Start the solution it will launch Excel and the add-in.
 
 Thanks to the following:
 
+  * @andrewkittredge for the named-pipe contribution.
   * @jornh for the RedGate.AppHost suggestion.
   * @arsher for the appdomainsafe branch which I have been using.
   * @AmaelN for an interesting example using WPF with Excel-DNA.
