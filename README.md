@@ -27,3 +27,8 @@ Thanks to the following:
   * @AmaelN for an interesting example using WPF with Excel-DNA.
   * RedGate for the AppHost library.
   * All the team making CefSharp for that neat project.
+
+## Note
+
+There is an alternative branch called `named-pipe` which doesn't seem to work currently, 
+but may be useful to consider as an alternative to the embedded HTTP server example here.
