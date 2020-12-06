@@ -6,3 +6,4 @@
 *.DotSettings
 bin/
 obj/
+_ReSharper.Caches/
