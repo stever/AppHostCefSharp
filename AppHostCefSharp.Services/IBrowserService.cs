@@ -6,6 +6,5 @@
         string AppDataPath { get; }
         int MessageCount { get; }
         string GetMessage();
-        void SendInReturn(string msg);
     }
 }
