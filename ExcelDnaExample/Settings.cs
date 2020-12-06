@@ -8,6 +8,7 @@ namespace ExcelDnaExample
     public class Settings : Dictionary<string, string>
     {
         public const string AppDataFolder = "ExcelDnaExample";
+
         private const string SettingsFilename = "Settings.json";
 
         internal static Settings Default { get; } = new Settings();
@@ -17,6 +18,7 @@ namespace ExcelDnaExample
 
         public Settings()
         {
+            base["API_Port"] = "8088";
             base["Geometry_ExampleWindow"] = "";
 
             var filename = Path.Combine(AppDataPath, SettingsFilename);

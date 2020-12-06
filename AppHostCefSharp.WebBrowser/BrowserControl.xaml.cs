@@ -4,7 +4,6 @@ using System.Windows;
 using System.Windows.Threading;
 using CefSharp;
 using AppHostCefSharp.Services;
-using ExcelDnaExample.BoundProxy;
 
 namespace AppHostCefSharp.WebBrowser
 {
@@ -15,7 +14,13 @@ namespace AppHostCefSharp.WebBrowser
 
         private readonly string appDataFolder;
         private readonly IBrowserService service;
-        private readonly DispatcherTimer dispatcherTimer;
+        private readonly DispatcherTimer timer;
+
+        public BrowserControl()
+        {
+            CefInit();
+            InitializeComponent();
+        }
 
         public BrowserControl(IBrowserService service)
         {
@@ -27,33 +32,49 @@ namespace AppHostCefSharp.WebBrowser
             this.service = service;
 
             Browser.MenuHandler = this;
-            Browser.RegisterAsyncJsObject("bound", new AddinAsyncBoundObject());
 
             var url = service.URL;
             if (url != null) Browser.Address = url;
 
-            // Timer to check if the browser window has been closed.
-            dispatcherTimer = new DispatcherTimer {Interval = new TimeSpan(0, 0, 1)};
-            dispatcherTimer.Tick += dispatcherTimer_Tick;
-            dispatcherTimer.Start();
+            timer = new DispatcherTimer {Interval = new TimeSpan(0, 0, 0, 0, 500)};
+            timer.Tick += TimerTick;
+            timer.Start();
         }
 
-        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        private void TimerTick(object sender, EventArgs e)
         {
-            if (!service.Closed)
+            while (service.MessageCount > 0)
             {
-                return;
+                var msg = service.GetMessage();
+                //if (msg != null)
+                //{
+                //    System.Windows.MessageBox.Show(msg);
+                //}
+
+                if (msg == "Refresh")
+                {
+                    Browser.Reload(ignoreCache:true);
+                    return;
+                }
+
+                if (msg == "Close")
+                {
+                    timer.Stop();
+
+                    if (Cef.IsInitialized)
+                    {
+                        Cef.Shutdown();
+                    }
+
+					Environment.Exit(0);
+                    return;
+                }
+
+                if (msg == "Ping")
+                {
+                    service.SendInReturn("Pong");
+                }
             }
-
-            // Stop timer and shut down CEF when browser window closed.
-            dispatcherTimer.Stop();
-
-            if (Cef.IsInitialized)
-            {
-                Cef.Shutdown();
-            }
-
-            Environment.Exit(0);
         }
 
         private void CefInit()
@@ -72,7 +93,6 @@ namespace AppHostCefSharp.WebBrowser
                 var path = Path.Combine(appDataRoot, appDataFolder);
                 settings.CachePath = Path.Combine(path, AppDataFolderCache);
                 settings.UserDataPath = Path.Combine(path, AppDataFolderUserData);
-                settings.IgnoreCertificateErrors = true;
             }
 
             Cef.Initialize(settings);
@@ -99,8 +119,6 @@ namespace AppHostCefSharp.WebBrowser
         }
 
         #endregion
-
-        #region Debug menu
 
         private void MenuItem_Click_ShowDevTools(object sender, RoutedEventArgs e)
         {
@@ -134,7 +152,5 @@ namespace AppHostCefSharp.WebBrowser
         {
             Browser.Forward();
         }
-
-        #endregion
     }
 }

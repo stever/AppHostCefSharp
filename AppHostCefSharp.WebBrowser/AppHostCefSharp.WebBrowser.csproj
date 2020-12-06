@@ -70,10 +70,6 @@
       <Project>{df29513b-2c81-48d9-97cd-45cc17afb5d2}</Project>
       <Name>AppHostCefSharp.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExcelDnaExample.BoundProxy\ExcelDnaExample.BoundProxy.csproj">
-      <Project>{691192fd-3c7a-4a0a-8158-5abb16b683d1}</Project>
-      <Name>ExcelDnaExample.BoundProxy</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

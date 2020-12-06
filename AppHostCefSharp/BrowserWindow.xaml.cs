@@ -1,41 +1,45 @@
 ﻿using System;
 using System.Windows.Controls;
+using System.Windows.Threading;
 using RedGate.AppHost.Server;
 
 namespace AppHostCefSharp
 {
     public partial class BrowserWindow
     {
-        private readonly string url;
-        private readonly string appDataPath;
-        private readonly IPersistGeometry geometry;
-
-        private IChildProcessHandle safeAppHostChildHandle;
-        private BrowserServiceLocator locator;
+        private readonly BrowserServiceLocator locator;
+        private readonly DispatcherTimer timer;
 
         public BrowserWindow()
-            : this("chrome://version", null, null, "AppHostCefSharp.WebBrowser.dll")
+            : this("chrome://version", null, null)
         { }
 
-        public BrowserWindow(string url, IPersistGeometry geometry, string appDataPath, string childAssemblyName)
+        public BrowserWindow(string url, IPersistGeometry geometry)
+            : this(url, geometry, null)
+        { }
+
+        public BrowserWindow(string url, IPersistGeometry geometry, string appDataPath)
         {
             InitializeComponent();
-
-            this.url = url;
-            this.appDataPath = appDataPath;
-            this.geometry = geometry;
-
             try
             {
                 geometry?.Restore(this);
-                safeAppHostChildHandle = new ChildProcessFactory().Create(childAssemblyName);
+
+                var safeAppHostChildHandle = new ChildProcessFactory()
+                    .Create("AppHostCefSharp.WebBrowser.dll");
+
                 locator = new BrowserServiceLocator(url, appDataPath);
                 Content = safeAppHostChildHandle.CreateElement(locator);
+
                 Closing += (sender, args) =>
                 {
-                    locator.Close();
+                    locator.Send("Close");
                     geometry?.Persist(this);
                 };
+
+                timer = new DispatcherTimer {Interval = new TimeSpan(0, 0, 0, 0, 500)};
+                timer.Tick += TimerTick;
+                timer.Start();
             }
             catch (Exception ex)
             {
@@ -43,14 +47,21 @@ namespace AppHostCefSharp
             }
         }
 
-        public void Refresh()
+        public void Send(string msg)
         {
-            locator.Close();
-            geometry?.Persist(this);
-            safeAppHostChildHandle = new ChildProcessFactory()
-                .Create("AppHostCefSharp.WebBrowser.dll");
-            locator = new BrowserServiceLocator(url, appDataPath);
-            Content = safeAppHostChildHandle.CreateElement(locator);
+            locator.Send(msg);
+        }
+
+        private void TimerTick(object sender, EventArgs e)
+        {
+            while (locator.ReturnMessageCount > 0)
+            {
+                var msg = locator.GetReturnMessage();
+                if (msg != null)
+                {
+                    System.Windows.MessageBox.Show(msg);
+                }
+            }
         }
     }
 }
