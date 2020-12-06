@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelDnaExample", "ExcelDnaExample\ExcelDnaExample.csproj", "{ECB915E3-D3FB-48E8-B906-6E06B0994FC4}"
 EndProject
@@ -13,6 +13,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHostCefSharp.Services", "AppHostCefSharp.Services\AppHostCefSharp.Services.csproj", "{DF29513B-2C81-48D9-97CD-45CC17AFB5D2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHostCefSharp.WebBrowser", "AppHostCefSharp.WebBrowser\AppHostCefSharp.WebBrowser.csproj", "{7547CFB2-5923-40D1-9645-903644D34E92}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF66B53F-73D2-47EE-9464-169FA7E497B6}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,5 +61,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E5AE86A-FF45-4E38-9342-C7A5A7FE27C0}
 	EndGlobalSection
 EndGlobal
