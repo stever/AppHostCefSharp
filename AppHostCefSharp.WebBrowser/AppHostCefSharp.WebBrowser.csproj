@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.props" Condition="Exists('..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.props')" />
-  <Import Project="..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\CefSharp.Wpf.86.0.241\build\CefSharp.Wpf.props" Condition="Exists('..\packages\CefSharp.Wpf.86.0.241\build\CefSharp.Wpf.props')" />
+  <Import Project="..\packages\CefSharp.Common.86.0.241\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.86.0.241\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.86.0.24\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.86.0.24\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.86.0.24\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.86.0.24\build\cef.redist.x64.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -42,17 +44,14 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="RedGate.AppHost.Interfaces, Version=0.0.1.135, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
-      <HintPath>..\packages\RedGate.AppHost.0.0.1.135\lib\RedGate.AppHost.Interfaces.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="RedGate.AppHost.Interfaces, Version=0.0.1.137, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
+      <HintPath>..\packages\RedGate.AppHost.0.0.1.137\lib\RedGate.AppHost.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="RedGate.AppHost.Remoting.WPF, Version=0.0.1.135, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
-      <HintPath>..\packages\RedGate.AppHost.0.0.1.135\lib\RedGate.AppHost.Remoting.WPF.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="RedGate.AppHost.Remoting.WPF, Version=0.0.1.137, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
+      <HintPath>..\packages\RedGate.AppHost.0.0.1.137\lib\RedGate.AppHost.Remoting.WPF.dll</HintPath>
     </Reference>
-    <Reference Include="RedGate.AppHost.Server, Version=0.0.1.135, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
-      <HintPath>..\packages\RedGate.AppHost.0.0.1.135\lib\RedGate.AppHost.Server.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="RedGate.AppHost.Server, Version=0.0.1.137, Culture=neutral, PublicKeyToken=7f465a1c156d4d57, processorArchitecture=MSIL">
+      <HintPath>..\packages\RedGate.AppHost.0.0.1.137\lib\RedGate.AppHost.Server.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xaml" />
@@ -81,23 +80,21 @@
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\cef.redist.x64.3.2883.1552\build\cef.redist.x64.targets" Condition="Exists('..\packages\cef.redist.x64.3.2883.1552\build\cef.redist.x64.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\cef.redist.x64.3.2883.1552\build\cef.redist.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.3.2883.1552\build\cef.redist.x64.targets'))" />
-    <Error Condition="!Exists('..\packages\cef.redist.x86.3.2883.1552\build\cef.redist.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.3.2883.1552\build\cef.redist.x86.targets'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.props'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.targets'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.props'))" />
-    <Error Condition="!Exists('..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.targets'))" />
-    <Error Condition="!Exists('..\packages\RedGate.AppHost.0.0.1.135\build\RedGate.AppHost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\RedGate.AppHost.0.0.1.135\build\RedGate.AppHost.targets'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x64.86.0.24\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.86.0.24\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.86.0.24\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.86.0.24\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.86.0.241\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.86.0.241\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.86.0.241\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.86.0.241\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Wpf.86.0.241\build\CefSharp.Wpf.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.86.0.241\build\CefSharp.Wpf.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Wpf.86.0.241\build\CefSharp.Wpf.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Wpf.86.0.241\build\CefSharp.Wpf.targets'))" />
+    <Error Condition="!Exists('..\packages\RedGate.AppHost.0.0.1.137\Build\RedGate.AppHost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\RedGate.AppHost.0.0.1.137\Build\RedGate.AppHost.targets'))" />
   </Target>
-  <Import Project="..\packages\cef.redist.x86.3.2883.1552\build\cef.redist.x86.targets" Condition="Exists('..\packages\cef.redist.x86.3.2883.1552\build\cef.redist.x86.targets')" />
-  <Import Project="..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.55.0.0\build\CefSharp.Common.targets')" />
-  <Import Project="..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.targets" Condition="Exists('..\packages\CefSharp.Wpf.55.0.0\build\CefSharp.Wpf.targets')" />
-  <Import Project="..\packages\RedGate.AppHost.0.0.1.135\build\RedGate.AppHost.targets" Condition="Exists('..\packages\RedGate.AppHost.0.0.1.135\build\RedGate.AppHost.targets')" />
+  <Import Project="..\packages\CefSharp.Common.86.0.241\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.86.0.241\build\CefSharp.Common.targets')" />
+  <Import Project="..\packages\CefSharp.Wpf.86.0.241\build\CefSharp.Wpf.targets" Condition="Exists('..\packages\CefSharp.Wpf.86.0.241\build\CefSharp.Wpf.targets')" />
+  <Import Project="..\packages\RedGate.AppHost.0.0.1.137\Build\RedGate.AppHost.targets" Condition="Exists('..\packages\RedGate.AppHost.0.0.1.137\Build\RedGate.AppHost.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

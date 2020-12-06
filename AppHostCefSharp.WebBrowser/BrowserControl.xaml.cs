@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Threading;
 using CefSharp;
 using AppHostCefSharp.Services;
+using CefSharp.Wpf;
 
 namespace AppHostCefSharp.WebBrowser
 {
