@@ -8,7 +8,7 @@ to deal with the problem, and so this example project was made. It works!
 
 ## Build
 
-This solution was built using Visual Studio Community 2015.
+This solution was built using Visual Studio 2019.
 
 Usual procedure to launch an Excel add-in:
 
